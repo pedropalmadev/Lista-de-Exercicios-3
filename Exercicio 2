@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int mdc(int a,int b) {
+    int resto;
+        while(b!=0);
+        resto = a%b;
+        a=b;
+        b=resto;
+}
+int mmc(int a,int b){
+    return (a*b)/mdc(a,b);
+}
+int main (){
+    int num1, num2;
+    
+    printf("Digite dois números:");
+    scanf("%d %d", &num1,&num2);
+    printf("O MMC de %d e %d é %d", num1,num2,mmc(num1,num2));
+    return 0;
+}
