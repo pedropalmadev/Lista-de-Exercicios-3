@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int primo (int x){
+    int ret = 1;
+    for(int i=2;i<=x/2;i++){
+        if(x % i == 0) 
+        ret = 0;
+    }
+    return ret;
+}
+
+int somaprimo(int n){
+    int aux, soma;
+    aux = 2; soma = 0;
+    while (n>0){
+        if(primo(aux)){
+            soma += aux;
+            n--;
+        } 
+        aux++;
+    }
+    return soma;
+}
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    printf("Soma dos primos:%d", somaprimo(n));
+}
